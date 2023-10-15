@@ -2,7 +2,7 @@ version: '3.7'
 services:
   mongodb:
     image: 'mongo:latest'
-    container_name: mongoDC
+    container_name: mongo
     environment:
       - 'MONGO_INITDB_DATABASE=admin'
       - 'MONGO_INITDB_ROOT_USERNAME=root'
@@ -16,7 +16,7 @@ services:
       - mongodb
     build: .
     image: kalahagame:latest
-    container_name: kalahaDC
+    container_name: kalaha-app
     environment:
       - 'SPRING_DATA_MONGODB_HOST=mongodb'
       - 'SPRING_DATA_MONGODB_PORT=27017'
@@ -29,5 +29,6 @@ services:
   kalaha-ui-outer:
     build: ui/.
     command: sh -c "npm start"
+    container_name: kalaha-ui
     ports:
       - '80:4200'
