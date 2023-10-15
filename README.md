@@ -12,23 +12,26 @@
 
 ![](images/illegalmove.png)
 
-5. The game stops when a Player wins. A model pops up informing who is the winner.
+5. The game stops when a Player wins. A modal pops up informing who is the winner.
 
 ![](images/winner.png)
 
 6. Click **Close** button to go to home.
 
+**If started with default configuration, these URLs should be accessible.**
+### Swagger UI :  http://localhost:8080/swagger-ui/index.html#/
+### Application URL :  http://localhost
 
 ## Design
 This is a simple app with a
 1. Spring Boot backend
 2. Mongo DB
-3. Anngular UI
+3. Angular UI
 
 ![](images/design.png)
 
 ## Project Dependencies
-###Backend server
+### Backend server
 1. Java 17+
 2. Maven 3.6.3 or newer
 3. Spring Boot 3.1.4
@@ -37,7 +40,7 @@ This is a simple app with a
 8. Junit
 9. Junit TestContainers
 
-###UI server
+### UI server
 1. Angular (v15.2.6)
 2. Node.js (v18.18.0)
 3. Bootstrap 5
@@ -45,7 +48,7 @@ This is a simple app with a
 ## Getting Started
 
 There are multiple ways to do this.
-####1. Start application using `docker-compose` from project root. Requires docker.
+#### 1. Start application using `docker-compose` from project root. Requires docker.
    ```bash
    docker-compose up -d
    ```
@@ -54,18 +57,25 @@ There are multiple ways to do this.
 - Build the docker image of the application using the maven and jdk. (Ref: `Dockerfile` in project root)
 - Deploy the application to `port 8080` with specified environment variables.
 
-####2. Start application by manually by running:
+#### 2. Start application by manually by running:
+
    ```bash
    mvn spring-boot:run
    ```
 - However, you will need to provide the mongo db connection string via application.properties file by defining properties.
     - `spring.data.mongodb.host=<your db host>`
-    - `spring.data.mongodb.host=<your db port>`
+    - `spring.data.mongodb.port=<your db port>`
     - `spring.data.mongodb.username=<your db username>`
     - `spring.data.mongodb.password=<your db password>`
- 
-**Swagger UI** :  http://localhost:8080/swagger-ui/index.html#/ (unless server address and port have been modified)    
-**Application URL** :  
+  
+  
+- Navigate to `ui` folder, execute:
+   ```bash
+   npm start
+   ```
+  You will need to configure the file `ui/src/environments/environment.ts` to point to correct backend url.
+
+
 
 ## Game flow
 1. Game is designed for two players on same system.
@@ -84,13 +94,14 @@ There are multiple ways to do this.
 ## Testing
 Test coverage(UT and IT):
 
-Backend:
+**Backend:**
 
  ![](images/coverage_be.png)
 
-UI:
+**UI:**
 
  ![](images/coverage_ui.png)
+Most UI tests cases were auto-generated using ai tools, and UI designing was done using various online tools.
 
 ## Possible Enhancements/Upgrades
 1. **Variations**: Game can be easily modified to support different initial pit size and who goes first. `GameFactory` can create games with different initial pit size(s) and player turns.
