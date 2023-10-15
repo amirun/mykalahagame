@@ -1,0 +1,167 @@
+.container-fluid {
+  color: white;
+  //background-color: rgb(255, 210, 187);
+  padding-bottom: 50px;
+  backdrop-filter: saturate(200%) blur(8px);
+}
+
+h1 {
+  display: flex;
+  justify-content: center;
+  font-family: sans-serif;
+  font-weight: bold;
+  font-size: 3rem;
+  color: #0000004d;
+  text-shadow: -1px 3px 17px rgb(255 255 255 / 37%), 1px 0px 0px rgb(38 18 0);
+}
+
+h2 {
+  display: flex;
+  justify-content: center;
+  padding: 5px;
+}
+
+h3 {
+  display: flex;
+  justify-content: center;
+  font-weight: bold;
+  padding: 10px;
+}
+
+h4 {
+  display: flex;
+  justify-content: center;
+  margin: 2rem;
+}
+
+.board {
+  height: 18rem;
+  width: 100%;
+  //background-color: rgb(165, 83, 42);
+  border-radius: 10px;
+  background-image: url("/assets/images/Image01.jpg");
+}
+
+.pit-area {
+  //background-color: rgb(165, 83, 42);
+  height: 9rem;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  padding: 0;
+}
+
+.big-pit {
+  height: 14.5rem;
+  width: 85%;
+  margin: 0px 16px;
+  //background-color: rgb(210, 151, 122);
+  border-radius: 10%;
+  font-size: 4rem;
+  font-weight: bold;
+  color: rgba(245, 245, 245, 0.858);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  box-shadow: inset -14px 14px 28px #120202, inset 14px -14px 28px #ffffff69;
+}
+
+.pit-name,
+.player-name {
+  display: flex;
+  justify-content: center;
+  font-weight: bold;
+  color: rgba(245, 245, 245, 0.911);
+}
+
+.player-name {
+  padding: 2px;
+}
+
+.pit {
+  height: 7rem;
+  margin: 5px 5px;
+  //background-color: rgb(0 0 0 / 30%); //rgb(172, 115, 86); rgb(176, 131, 108);
+  border-radius: 10%;
+  font-size: 3rem;
+  font-weight: bold;
+  color: rgba(245, 245, 245, 0.858);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  box-shadow: inset -8px 8px 11px #000000, inset 8px -8px 11px #ffffff8a;
+}
+
+.col-8 {
+  padding: 0;
+}
+
+.col-2 {
+  padding: 0;
+  border-radius: 0px 10px 10px 0px;
+}
+
+.margin-top-28 {
+  margin-top: 28px;
+}
+
+.player1-color .pit, .player1-color .big-pit, .player1-color.player-container{
+  background-color: rgb(224 14 14 / 25%) !important;
+}
+.player2-color .pit, .player2-color .big-pit, .player2-color.player-container {
+  background-color: rgb(37 40 188 / 30%) !important;
+}
+
+.player-container {
+  height: 10rem;
+  //background-color: rgb(165, 83, 42);
+  box-shadow: inset -15px 15px 47px #010000, inset 15px -15px 47px #8d8d8d;
+  border-radius: 10px;
+  color: whitesmoke;
+  margin: 1rem 2rem 3rem;
+}
+
+.button-container {
+  display: flex;
+  justify-content: space-between;
+}
+
+.player-turn {
+  height: 3rem;
+}
+
+
+.button-74 {
+  background-color: #00cf5099;
+  border: 2px solid #422800;
+  border-radius: 30px;
+  box-shadow: #422800 4px 4px 0 0;
+  color: #ddd;
+  cursor: pointer;
+  display: inline-block;
+  font-weight: 600;
+  font-size: 18px;
+  padding: 0 18px;
+  line-height: 50px;
+  text-align: center;
+  text-decoration: none;
+  user-select: none;
+  -webkit-user-select: none;
+  touch-action: manipulation;
+}
+
+.button-74:hover {
+  background-color: #3d3c3cc9;
+}
+
+.button-74:active {
+  box-shadow: #422800 2px 2px 0 0;
+  transform: translate(2px, 2px);
+}
+
+.button-74-red{
+  background-color: #761e1e47 !important;
+}
+.button-74-red:hover {
+  background-color: #4e412b !important;
+}

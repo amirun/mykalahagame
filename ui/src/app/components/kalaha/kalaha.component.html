@@ -1,0 +1,105 @@
+<app-loader *ngIf="loading"></app-loader>
+<div class="container-fluid">
+    <h1>Kalaha</h1>
+    <div class="container board">
+        <div class="row">
+            <div class="col-2 player2-color">
+                <div class="player-name">Player 2</div>
+                <div class="big-pit">{{ player2BigPit }}</div>
+            </div>
+            <div class="col-8">
+                <div class="container">
+                    <div class="row">
+                        <div class="col pit-area player2-color" *ngFor="let pitName of player2PitNames; let i = index">
+                            <div class="pit-name">{{ pitName }}</div>
+                            <div class="pit">{{ player2Pits[i] }}</div>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col pit-area player1-color" *ngFor="let pitName of player1PitNames; let i = index">
+                            <div class="pit">{{ player1Pits[i] }}</div>
+                            <div class="pit-name">{{ pitName }}</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-2 player1-color">
+                <div class="big-pit margin-top-28">{{ player1BigPit }}</div>
+                <div class="player-name">Player 1</div>
+            </div>
+        </div>
+    </div>
+    <div class="container">
+        <div class="row player-turn"><h3>{{ playerTurn }}</h3></div>
+        <div class="row">
+            <div class="col player-container player1-color">
+                <h2>Player 1</h2>
+                <h4>
+                    <label>Choose Pit &nbsp;</label>
+                    <select #pit1 name="pit" id="pit" value="selectedPit" [disabled]="isGameEnded || !isPlayer1Turn"
+                        (change)="getSelectedPit(pit1.value)">
+                        <option *ngFor="let pitName of player1PitNames" [selected]="pitName === selectedPit && isPlayer1Turn">{{ pitName
+                            }}</option>
+                    </select>
+                </h4>
+            </div>
+            <div class="col player-container player2-color">
+                <h2>Player 2</h2>
+                <h4>
+                    <label>Choose Pit &nbsp;</label>
+                    <select #pit2 name="pit" id="pit" value="selectedPit" [disabled]="isGameEnded || !isPlayer2Turn"
+                        (change)="getSelectedPit(pit2.value)">
+                        <option *ngFor="let pitName of player1PitNames" [selected]="pitName === selectedPit && isPlayer2Turn">{{ pitName
+                            }}</option>
+                    </select>
+                </h4>
+            </div>
+        </div>
+        <div class="text-center" *ngIf="isGameEnded">
+            <button type="button" class="btn btn-success button-74" (click)="startGame()">Start Game</button>
+        </div>
+        <div class="text-center" *ngIf="!isGameEnded">
+            <button type="button" class="btn btn-success me-3 button-74" (click)="play()">Play</button>
+            <button type="button" class="btn btn-danger button-74 button-74-red" data-bs-toggle="modal"
+                data-bs-target="#quitModal">Quit</button>
+
+        </div>
+    </div>
+</div>
+
+<!-- Quit Modal -->
+<div class="modal fade" id="quitModal" tabindex="-1" aria-labelledby="quitModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="quitModalLabel">Quit Kalaha</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+                Are you sure you want to quit?
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-primary" data-bs-dismiss="modal" (click)="reset()">Ok</button>
+                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancel</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- The Winner Modal -->
+<div class="modal fade" id="winnerModal" tabindex="-1" aria-labelledby="winnerModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="winnerModalLabel">Winner</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+                <p>The winner is {{ kalahaGame.winner }}</p>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-primary" data-bs-dismiss="modal" (click)="reset()">Close</button>
+            </div>
+        </div>
+    </div>
+</div>
