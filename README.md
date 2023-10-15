@@ -4,7 +4,7 @@
 
 ![](images/ui_sample.png)
 
-##How to Play
+## How to Play
 1. Each player has part of their board highlighted in different colors.
 2. Start plaring by clicking on **Start** button.
 3. Players can play when its their turn by selecting the pit letter/alphabet (A-F) from the drop-down and click **Play** button.
@@ -19,7 +19,7 @@
 6. Click **Close** button to go to home.
 
 
-##Design
+## Design
 This is a simple app with a
 1. Spring Boot backend
 2. Mongo DB
@@ -76,12 +76,12 @@ There are multiple ways to do this.
 6. Player repeats if their move finishes on their own big pit.
 7. Application decides winner when all pits of any one player are empty. 
 
-##Features
+## Features
 1. Multiple games can be played simultaneously.
 2. Offline 2 players: both players playing on same system.
 
 
-##Testing
+## Testing
 Test coverage(UT and IT):
 
 Backend:
@@ -92,7 +92,7 @@ UI:
 
  ![](images/coverage_ui.png)
 
-##Possible Enhancements/Upgrades
+## Possible Enhancements/Upgrades
 1. **Variations**: Game can be easily modified to support different initial pit size and who goes first. `GameFactory` can create games with different initial pit size(s) and player turns.
 2. **Pause/Resume feature**: Using the getGame(`/{gameId}` endpoint) api, we can easily enhance game to enable continuing an existing game.
 3. **Two players online**: both players can join from separate clients. This feature can be implemented using the existing APIs and enhancing the UI.
