@@ -6,7 +6,7 @@
 
 ## How to Play
 1. Each player has part of their board highlighted in different colors.
-2. Start plaring by clicking on **Start** button.
+2. Start playing by clicking on **Start** button.
 3. Players can play when its their turn by selecting the pit letter/alphabet (A-F) from the drop-down and click **Play** button.
 4. Players are shown error if choosing empty pits.
 
@@ -20,10 +20,10 @@
 
 **If started with default configuration, these URLs should be accessible.**
 ### Swagger UI :  http://localhost:8080/swagger-ui/index.html#/
-### Application URL :  http://localhost
+### Game URL :  http://localhost
 
 ## Design
-This is a simple app with a
+This is a simple app with:
 1. Spring Boot backend
 2. Mongo DB
 3. Angular UI
@@ -57,7 +57,7 @@ There are multiple ways to do this.
 - Build the docker image of the application using the maven and jdk. (Ref: `Dockerfile` in project root)
 - Deploy the application to `port 8080` with specified environment variables.
 
-#### 2. Start application by manually by running:
+#### 2. Start application manually by running:
 
    ```bash
    mvn spring-boot:run
@@ -101,7 +101,7 @@ Test coverage(UT and IT):
 **UI:**
 
  ![](images/coverage_ui.png)
-Most UI tests cases were auto-generated using ai tools, and UI designing was done using various online tools.
+Most UI test cases were auto-generated using AI tools, and UI designing was done using various online tools.
 
 ## Possible Enhancements/Upgrades
 1. **Variations**: Game can be easily modified to support different initial pit size and who goes first. `GameFactory` can create games with different initial pit size(s) and player turns.
@@ -109,6 +109,6 @@ Most UI tests cases were auto-generated using ai tools, and UI designing was don
 3. **Two players online**: both players can join from separate clients. This feature can be implemented using the existing APIs and enhancing the UI.
 4. **User profile**: Enhance with `Spring Boot Security`. We can persist users for enabling features like user profile, game history.
 5. **Replay game**: game replay feature by using caching mechanisms(with redis db).
-6. **Discovery + Load balancing + Monitoring**: Using full spring cloud features, we can enhance the application to support service discovery(consul), load-balancing(using Ribbon), distributed tracing(Spring Sleuth + Zipkins), Redis db(caching),
+6. **Discovery + Load balancing + Monitoring**: Using full spring cloud features, we can enhance the application to support service discovery(Consul), load-balancing(using Ribbon), distributed tracing(Spring Sleuth + Zipkins), Redis db(caching),
 7. **Logging**: ELK stack for log analysis.
 8. **Clean up**: Batch jobs to clean old games.
