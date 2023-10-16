@@ -39,7 +39,7 @@ public class GameController {
     @Operation(summary = "Get Kalaha game by ID", description = "Retrieve a Kalaha game by its unique ID.")
     @ApiResponse(
             responseCode = "200",
-            description = "Existing game",
+            description = "Returns existing game",
             content = @Content(
                     mediaType = "application/json",
                     schema = @Schema(implementation = KalahaGameDTO.class)
@@ -51,7 +51,7 @@ public class GameController {
     }
 
 
-    @Operation(summary = "Play a move in the specified Kalaha game. ", description = "Play a move by specifying the game ID and pit ID. Returns the new board status.")
+    @Operation(summary = "Play a move in the specified Kalaha game.", description = "Play a move by specifying the game ID and pit ID. Returns the new board status.")
     @ApiResponse(
             responseCode = "200",
             description = "Returns the new board status after the specified.",
