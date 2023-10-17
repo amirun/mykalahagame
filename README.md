@@ -101,6 +101,7 @@ Test coverage(UT and IT):
 **UI:**
 
  ![](images/coverage_ui.png)
+
 Most UI test cases were auto-generated using AI tools, and UI designing was done using various online tools.
 
 ## Possible Enhancements/Upgrades
